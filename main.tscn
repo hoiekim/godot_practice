@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpw678e30ijni"]
+[gd_scene load_steps=8 format=3 uid="uid://bpw678e30ijni"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://jx2676ewsyox" path="res://scenes/chest.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://b0dvh0e2pfr2c" path="res://scripts/tool.gd" id="4_lquwl"]
-[ext_resource type="PackedScene" uid="uid://dmg0n4ecuahl" path="res://scenes/wall.tscn" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://b0dvh0e2pfr2c" path="res://scripts/tool/tool.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cqhbjmq2ydwuo" path="res://scenes/barrel.tscn" id="5_lquwl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -21,9 +20,8 @@ glow_enabled = true
 
 [node name="Main" type="Node3D"]
 
-[node name="ScriptTool" type="Node3D" parent="."]
+[node name="Tool" type="Node" parent="."]
 script = ExtResource("4_lquwl")
-create_static_body = null
 
 [node name="Environment" type="Node" parent="."]
 
@@ -138,13 +136,10 @@ transform = Transform3D(4.3500004, 0, 0, 0, -4.3711385e-08, 4.3500004, 0, -0.999
 operation = 2
 sides = 32
 
-[node name="wall" parent="Building" instance=ExtResource("5_7mycd")]
-transform = Transform3D(0.34202015, 0, 0.9396926, 0, 1, 0, -0.9396926, 0, 0.34202015, -4.4, 0.2, 59.600002)
-
 [node name="Object" type="Node" parent="."]
 
 [node name="barrel" parent="Object" instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6, 2.7, 56.3)
 
-[node name="Chest" parent="Object" instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7040005, 0.17500043, 55.979916)
+[node name="StaticBody3D" parent="Object" instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.301613, 0.17500138, 54.717796)

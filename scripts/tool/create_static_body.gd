@@ -3,8 +3,8 @@ extends Node
 class_name CreateStaticBody
 
 # --- SETTINGS ---
-const MODELS_FOLDER_PATH = "res://models/dungeon_assets/building"
-const SAVE_PATH = "res://scenes"
+const MODELS_FOLDER_PATH = "res://models/dungeon_assets/props"
+const SAVE_PATH = "res://scenes/props"
 # Options: "trimesh" (precise), "convex" (performant), or "multiple_convex"
 const COLLISION_TYPE = "trimesh" 
 

@@ -2,7 +2,7 @@ extends Node
 class_name SetExternalMaterial
 
 const MODELS_FOLDER_PATH = "res://models/dungeon_assets/building"
-const MATERIAL_PATH = "res://models/dungeon_assets/building/dungeon_mat.tres"
+const MATERIAL_PATH = "res://models/dungeon_assets/dungeon_mat.tres"
 const UID_PATH = "uid://dqvk6wl0edkgu"
 
 static func run():
@@ -16,10 +16,6 @@ static func run():
 			continue
 
 		var subresources = config.get_value("params", "_subresources", {})
-
-		if subresources.has("materials"):
-			print("materials already exists: ", glb_path)
-			continue
 		
 		print("Setting external material for: ", glb_path)
 		var materials = {}
